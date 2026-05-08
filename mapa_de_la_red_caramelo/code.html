@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CARAMELO - Mapa de Casos y Zonas Críticas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Custom scrollbar for side panel */
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #dbc2b0;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "tertiary-container": "#00a572",
+                      "secondary-container": "#eae0b5",
+                      "on-tertiary-fixed": "#002113",
+                      "on-surface-variant": "#554336",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#b15f00",
+                      "tertiary-fixed": "#6ffbbe",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#dbc2b0",
+                      "on-secondary-fixed": "#201c02",
+                      "secondary-fixed": "#ede3b8",
+                      "background": "#f8f9ff",
+                      "on-surface": "#121c28",
+                      "surface-container-low": "#eef4ff",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f8f9ff",
+                      "primary-fixed": "#ffdcc3",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#904d00",
+                      "tertiary": "#006c49",
+                      "surface-container-high": "#dfe9fa",
+                      "surface-variant": "#d9e3f4",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary": "#8d4b00",
+                      "inverse-primary": "#ffb77d",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed": "#2f1500",
+                      "on-secondary-container": "#6a6341",
+                      "secondary": "#665f3d",
+                      "surface-container-highest": "#d9e3f4",
+                      "secondary-fixed-dim": "#d1c79d",
+                      "inverse-surface": "#27313e",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#6e3900",
+                      "on-secondary-fixed-variant": "#4d4727",
+                      "outline": "#887364",
+                      "on-primary-container": "#fffbff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#00311f",
+                      "surface-dim": "#d1dbec"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "xl": "64px",
+                      "margin": "24px",
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "lg": "40px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-background shadow-sm docked full-width top-0 z-50">
+<div class="flex justify-between items-center px-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="font-headline-xl text-headline-xl font-bold text-primary dark:text-primary-fixed">CARAMELO</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Inicio</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Casos</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Reportar</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-label-md hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Mapa</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Adoptar</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low transition-colors">search</button>
+<button class="material-symbols-outlined text-primary p-2 rounded-full hover:bg-surface-container-low transition-colors">account_circle</button>
+</div>
+</div>
+</header>
+<main class="relative h-[calc(100vh-72px)] w-full flex">
+<!-- Sidebar Filters -->
+<aside class="hidden md:flex flex-col w-80 bg-surface-container-lowest border-r border-outline-variant z-40 overflow-y-auto custom-scroll shadow-lg">
+<div class="p-margin space-y-lg">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Explorar Mapa</h2>
+<p class="font-body-md text-on-surface-variant text-sm">Popayán, Cauca</p>
+</div>
+<!-- Urgency Filters -->
+<div class="space-y-sm">
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider text-[11px]">Nivel de Urgencia</p>
+<div class="grid grid-cols-1 gap-xs">
+<label class="flex items-center gap-sm p-3 rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<input checked="" class="w-5 h-5 rounded border-2 border-outline text-error focus:ring-error-container" type="checkbox"/>
+<span class="flex-1 font-body-md text-on-surface group-hover:text-primary transition-colors">Emergencia (Crítico)</span>
+<span class="w-3 h-3 rounded-full bg-error shadow-[0_0_8px_rgba(186,26,26,0.4)]"></span>
+</label>
+<label class="flex items-center gap-sm p-3 rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<input checked="" class="w-5 h-5 rounded border-2 border-outline text-primary focus:ring-primary-container" type="checkbox"/>
+<span class="flex-1 font-body-md text-on-surface group-hover:text-primary transition-colors">Extraviado</span>
+<span class="w-3 h-3 rounded-full bg-primary shadow-[0_0_8px_rgba(141,75,0,0.4)]"></span>
+</label>
+<label class="flex items-center gap-sm p-3 rounded-xl hover:bg-surface-container-low cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-2 border-outline text-tertiary-container focus:ring-tertiary-fixed" type="checkbox"/>
+<span class="flex-1 font-body-md text-on-surface group-hover:text-primary transition-colors">En Resguardo</span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container shadow-[0_0_8px_rgba(0,165,114,0.4)]"></span>
+</label>
+</div>
+</div>
+<!-- Necessity Types -->
+<div class="space-y-sm">
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider text-[11px]">Tipo de Necesidad</p>
+<div class="flex flex-wrap gap-xs">
+<button class="px-4 py-2 rounded-full border-2 border-outline-variant text-on-surface-variant font-label-sm hover:border-primary hover:text-primary transition-all">Atención Médica</button>
+<button class="px-4 py-2 rounded-full border-2 border-outline-variant text-on-surface-variant font-label-sm hover:border-primary hover:text-primary transition-all">Hogar Temporal</button>
+<button class="px-4 py-2 rounded-full border-2 border-outline-variant text-on-surface-variant font-label-sm hover:border-primary hover:text-primary transition-all">Búsqueda Activa</button>
+</div>
+</div>
+<!-- Allies -->
+<div class="space-y-sm">
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider text-[11px]">Entidades Aliadas</p>
+<div class="space-y-xs">
+<div class="flex items-center gap-sm p-2 bg-surface-container-low rounded-xl">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Veterinaria" data-alt="A clean, modern veterinary clinic entrance with soft warm lighting, featuring professional signage and a welcoming atmosphere. The visual style is empathetic and trustworthy, using a palette of soft whites and warm wood tones, consistent with a community care brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiccu7sFvoQeGgytxSMjorZ38Y8ClNGvv7jK95MecxFi5eomfVX5H74j3ddI_KcvVAiON2kuMA1v7SeBu-0u8qR8fSYL7UDa3qnEDdFN9vwkjJ9TAUeunawULzo25Pkgev4j2oeFZt2ZeEvT8rTFZA9XEksUq2oxWK_CzkJUlPL8G0zLbs99UwasReIQTj0AnJr95UttYYbv4L9_MiMiFt1AYRECHz5HUQopqxUD8Wl97av4aJDnQkM9pjHAsYMPiC8N08hQF1syo"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-on-surface truncate">Clínica San Roque</p>
+<p class="text-[10px] text-tertiary-container font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Aliado Activo
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-sm p-2 hover:bg-surface-container-low rounded-xl cursor-pointer transition-colors">
+<div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Shelter" data-alt="A cozy and safe animal shelter interior with spacious, clean areas for dogs. Sunlight streams through large windows, creating a hopeful and warm environment. The scene emphasizes community action and rescue, with a focus on empathy and care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUvK-_IaOdJUMB-YMhv5X7u5nU0BBkNwDT_DzzzFJUsK1VLPWfGjCjq7AluEaQuUmwVrhrs1takm-E84gny9rnBTNF-49R2gPB1ylszLPXOjNQraYLcOiuGSw5o49254FPKor93dgoWNw6RgMyl2hMSle-wAIGH3yZ40_fHDgyewgWaXM2wqnM5CBFgNZFwOFCCIiD5k7xJF-Cr35ekDlGDlKw3W2-cPP-hBlMLFeoK9ywVLtCRh5wQ5n0uAXnxYeR7FaRqyPo1lE"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-on-surface truncate">Refugio Huellitas</p>
+<p class="text-[10px] text-on-surface-variant">Zona Norte</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Legend Card -->
+<div class="p-gutter bg-secondary-container/30 rounded-2xl border border-secondary-fixed">
+<h4 class="font-label-md text-on-secondary-container mb-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                        Mapa de Calor
+                    </h4>
+<p class="text-xs text-on-secondary-container/80 leading-relaxed">
+                        Las zonas sombreadas en naranja indican áreas con múltiples reportes activos en las últimas 48 horas. Recomendamos precaución.
+                    </p>
+</div>
+</div>
+</aside>
+<!-- Map Canvas -->
+<div class="flex-1 relative bg-surface-container-low">
+<!-- Full Screen Map Background -->
+<div class="absolute inset-0 w-full h-full overflow-hidden">
+<img alt="Map of Popayán" class="w-full h-full object-cover opacity-60 grayscale-[0.2]" data-alt="A detailed, artistic aerial view map of a historic colonial city like Popayán, featuring white buildings and terracotta roofs. The map is stylized with soft, translucent layers of orange and red heat map gradients to indicate high-activity zones. The lighting is bright and clear, emphasizing the community-centric and proactive reporting tool aesthetic." data-location="Popayán" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8zXyPIe4pXT_gF46pPeYmC2bEpg0R7Zo7259JibpSD9BPCHN3liz8nEtsYtboSlj9sZhO-BLdS2y3sS_LUrT6rD7iz1zkeD8ccfXk5jPh2TMruWicu1XRGKPaitL58ThVa45ukNmbRirLQs5a4Ymy9EU-taNYyDrZXW3ZNY0KjQ7CkyL_hzb2wH2Y2YWe9vxDBz6lsnTvh4mg_sDi0aN6EV4L7flFUosbd41-uaHeCWICsNmV0BxJUAqCbeTkNiFWBX5JTbRRwbc"/>
+<!-- Heatmap Overlay Effect (Simulated with Gradients) -->
+<div class="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/3 w-80 h-80 bg-error/10 rounded-full blur-3xl"></div>
+<!-- Active Case Markers -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="absolute inset-0 bg-error rounded-full animate-ping opacity-75"></div>
+<div class="relative w-10 h-10 bg-error rounded-full flex items-center justify-center text-white border-2 border-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<!-- Tooltip Card -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 glass-panel p-3 rounded-xl shadow-xl border border-white/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<span class="text-[10px] font-bold text-error uppercase">Urgente</span>
+<p class="font-label-md text-on-surface">Perro herido - Sector Centro</p>
+<p class="text-xs text-on-surface-variant">Reportado hace 15 min</p>
+</div>
+</div>
+<div class="absolute bottom-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white border-2 border-white shadow-lg">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-48 glass-panel p-3 rounded-xl shadow-xl border border-white/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<span class="text-[10px] font-bold text-primary uppercase">Extraviado</span>
+<p class="font-label-md text-on-surface">"Caramelo" - Golden Retriever</p>
+<p class="text-xs text-on-surface-variant">Ultima vez visto: Belén</p>
+</div>
+</div>
+<div class="absolute top-1/2 right-1/4 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="w-8 h-8 bg-tertiary-container rounded-full flex items-center justify-center text-white border-2 border-white shadow-lg">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+</div>
+</div>
+<!-- Floating Search/Filter Bar (Mobile) -->
+<div class="absolute top-4 left-4 right-4 md:hidden">
+<div class="bg-white/90 backdrop-blur-md p-gutter rounded-2xl shadow-lg border border-white/50 flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1" placeholder="Buscar por barrio o zona..." type="text"/>
+<button class="material-symbols-outlined text-primary p-1">tune</button>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-24 md:bottom-8 right-8 flex flex-col gap-sm">
+<div class="flex flex-col bg-white rounded-xl shadow-lg border border-outline-variant overflow-hidden">
+<button class="p-3 hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="p-3 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="p-3 bg-white text-on-surface rounded-xl shadow-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="p-3 bg-primary text-white rounded-xl shadow-lg hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">layers</span>
+</button>
+</div>
+<!-- Floating Stats (Bento Style) -->
+<div class="absolute bottom-24 md:bottom-8 left-8 hidden lg:flex gap-sm pointer-events-none">
+<div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white/50 flex items-center gap-sm pointer-events-auto">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error">emergency</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase">Urgencias</p>
+<p class="text-xl font-bold text-on-surface">12 <span class="text-sm font-normal text-on-surface-variant">hoy</span></p>
+</div>
+</div>
+<div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white/50 flex items-center gap-sm pointer-events-auto">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase">Rescatados</p>
+<p class="text-xl font-bold text-on-surface">156 <span class="text-sm font-normal text-on-surface-variant">total</span></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-xs bg-surface-container-lowest md:hidden shadow-[0_-4px_20px_rgba(141,75,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-label-sm text-label-sm mt-1">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">list_alt</span>
+<span class="font-label-sm text-label-sm mt-1">Casos</span>
+</a>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-sm text-label-sm">Mapa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">pets</span>
+<span class="font-label-sm text-label-sm mt-1">Adoptar</span>
+</a>
+</nav>
+</body></html>

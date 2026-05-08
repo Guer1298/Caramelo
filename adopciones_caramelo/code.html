@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "tertiary-container": "#00a572",
+                    "secondary-container": "#eae0b5",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#554336",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#b15f00",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-background": "#121c28",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#dbc2b0",
+                    "on-secondary-fixed": "#201c02",
+                    "secondary-fixed": "#ede3b8",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c28",
+                    "surface-container-low": "#eef4ff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9ff",
+                    "primary-fixed": "#ffdcc3",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#904d00",
+                    "tertiary": "#006c49",
+                    "surface-container-high": "#dfe9fa",
+                    "surface-variant": "#d9e3f4",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary": "#8d4b00",
+                    "inverse-primary": "#ffb77d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed": "#2f1500",
+                    "on-secondary-container": "#6a6341",
+                    "secondary": "#665f3d",
+                    "surface-container-highest": "#d9e3f4",
+                    "secondary-fixed-dim": "#d1c79d",
+                    "inverse-surface": "#27313e",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-secondary-fixed-variant": "#4d4727",
+                    "outline": "#887364",
+                    "on-primary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#00311f",
+                    "surface-dim": "#d1dbec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "64px",
+                    "margin": "24px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #f8f9ff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-background docked full-width top-0 shadow-sm z-40 sticky">
+<div class="flex justify-between items-center px-margin py-base w-full max-w-7xl mx-auto h-20">
+<h1 class="font-headline-xl text-headline-xl font-bold text-primary dark:text-primary-fixed">CARAMELO</h1>
+<nav class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Inicio</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Casos</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Reportar</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg font-label-md" href="#">Mapa</a>
+<a class="text-primary dark:text-primary-fixed font-bold hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors px-3 py-2 rounded-lg font-label-md underline decoration-2 underline-offset-4" href="#">Adoptar</a>
+</nav>
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full transition-colors">search</button>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low rounded-full transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin py-lg">
+<!-- Hero Section Adoptions -->
+<section class="relative rounded-[32px] overflow-hidden mb-xl h-[400px] flex items-center">
+<img alt="Adopciones Caramelo" class="absolute inset-0 w-full h-full object-cover" data-alt="A warm, cinematic photograph of a happy Golden Retriever playing in a sunny meadow filled with soft wildflowers. The lighting is high-key and golden, emphasizing a light-mode, soft tactile aesthetic. The scene communicates trust and companionship, perfectly aligned with the empathetic Caramelo brand. The background is slightly blurred to focus on the dog's joyful expression, using a palette of soft ambers and greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDwQt8lBzPcUGkDqbSqoIZguIwkCVKTfQ4U33ivif6BX2LWb4g82N2whhPQtSLASIys_PYQp1nrRfSe9Uj7Ff7kyNcH0kBf__2Iwz96eN74HhzzT6BBJuk8N_x-hghZSj9fCR4854c30Owk7DwMzvWQqRWt5z4ngLm_jnJ9-i7FRk5s_VEX1AfNNYx2OUNGg5X_BMMsDG8zHxYkIPsjESwBWn2fea10jOgTh4NF7jf7uSu23orfs7vfPfeS3_E7-OSUhHM4hvdXc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+<div class="relative z-10 px-lg max-w-2xl text-on-primary">
+<h2 class="font-headline-xl text-headline-xl mb-base">Tu nuevo mejor amigo te espera</h2>
+<p class="font-body-lg text-body-lg opacity-90">Cada perro en nuestra red tiene una historia. Ayúdanos a escribir el siguiente capítulo lleno de amor y colas moviéndose.</p>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="mb-xl">
+<div class="flex justify-between items-end mb-md">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Peludos listos para ir a casa</h3>
+<p class="font-body-md text-on-surface-variant">Encuentra al compañero ideal según su personalidad y tus necesidades.</p>
+</div>
+<div class="flex gap-xs">
+<button class="px-base py-xs bg-surface-container-high rounded-full font-label-md text-primary">Filtrar</button>
+<button class="px-base py-xs bg-surface-container-high rounded-full font-label-md text-primary">Ordenar</button>
+</div>
+</div>
+<!-- Bento-style Grid for Adoption Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Adoptable 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up portrait of a fluffy white puppy with bright, intelligent eyes looking directly at the camera with a curious expression. The lighting is soft and natural, coming from a large window, creating gentle shadows and a cozy domestic atmosphere. The aesthetic is clean and modern, using a soft cream-tinted background that matches the brand's warm color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDji2PwqpZZIx-N1yNyZ5N5RRZUI7aYlbk-pbMbZJSRFo7daBgWGjZJ2-UBgujFzPferXB66KNebAjmq9sHESo29oHJ7k6yHWwJ5mdb5ZYcnWBiLKL5rLsFoilrgvkMyDYpuyRv-fnYBu6MO2yKYOLPdJQBE-5b3qcDNcMV_57zhtzd54TTMwJiSZuNHada92KhdNRQHb95nNKAY0OIlNCFt2I_bFfcH0ApL9jaHUzWU-683uP175U8O0PVYguU5zJ74fB2sIMHbvo"/>
+<span class="absolute top-4 right-4 bg-primary text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">En Adopción</span>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-headline-md text-headline-md text-on-surface">Caramelo</h4>
+<span class="flex items-center gap-1 text-tertiary font-label-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span>Saludable</span>
+</div>
+<p class="font-label-sm text-primary mb-base flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">pets</span> Muy juguetón y activo</p>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-md">Busca una familia con niños que le guste correr por las tardes. Es sociable con otros perros.</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Espacio amplio</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Vacunas al día</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-md hover:opacity-90 transition-opacity active:scale-95 duration-150">Conocer a Caramelo</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Adoptable 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A medium-sized brown dog with soulful eyes sitting calmly in a modern living room setting. The interior features soft neutral tones, wooden textures, and a warm rug, suggesting a peaceful home environment. The photography style is empathetic and crisp, capturing the dog's gentle personality through a soft-focus background and warm, diffuse lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzty8nxNKR9w3V_QeAJO-UnjmZJluxjo0e5t5L0xyFClgDvCehtkbuSDu9uCUxBO6ECozbtzBQ701TkDsBOJZWt7ABvMSgpLLPxqzkY0DdJbN4DtBFqPazuAyKUDmYUmw4KXVBlChlDUTqXXW5_YXP8m_zLMqGTz4oA8BbZwV6FTSzxy5_dRQ9lx5s-ORR-7Y7JBaFlcO5ZLZiQebLvhKqgds9UB_G-AVc5PorPxbFYnEy7EgYotoxOnyIbUVQkcCjpq361fC_Gkg"/>
+<span class="absolute top-4 right-4 bg-primary text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">En Adopción</span>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-headline-md text-headline-md text-on-surface">Lola</h4>
+<span class="flex items-center gap-1 text-tertiary font-label-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span>Esterilizada</span>
+</div>
+<p class="font-label-sm text-primary mb-base flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">nights_stay</span> Tranquila y cariñosa</p>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-md">Lola es ideal para un apartamento. Le encanta dormir cerca de sus humanos y paseos suaves.</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Apartamento</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Senior friendly</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-md hover:opacity-90 transition-opacity active:scale-95 duration-150">Conocer a Lola</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Adoptable 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A happy, scruffy terrier mix running through a field of tall grass during sunset. The low sun creates a beautiful rim light around the dog's fur, giving it a glowing, ethereal quality. The overall mood is energetic and optimistic, representing freedom and community care. The color palette includes deep oranges, soft yellows, and rich greens, adhering to the Soft Tactile brand style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2yEAmX_wkBm3c_kU6u9Az8IWKrf8bT29WWfslMtxnTGLWccUVdSsNf7gZC2zyz8VkqVAF7aLl9sE5YDW4Qfjyx07SjThfJcpJN0N6TPGiiKPqiqA5H0SWNAnR-vpgtfgwQmFz9uz5AYwugIuV_1zpNYKcQ4As_EQTMWeW8yL6lcBkEH56N6wk4PeyWI4T1Ee_rlqgFKoN4NgRlTu-xY9xDVMW4mFPG2Y2T3AK0H1oI_WhGFS3iuuMtUXxEwUG6ah00PUVcOzGJUo"/>
+<span class="absolute top-4 right-4 bg-primary text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm shadow-md">En Adopción</span>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-headline-md text-headline-md text-on-surface">Pipo</h4>
+<span class="flex items-center gap-1 text-tertiary font-label-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span>Rehabilitado</span>
+</div>
+<p class="font-label-sm text-primary mb-base flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">psychology</span> Inteligente y leal</p>
+<p class="font-body-md text-on-surface-variant line-clamp-2 mb-md">Rescatado de las calles, Pipo ha aprendido muchos trucos y busca un dueño paciente.</p>
+<div class="flex flex-wrap gap-xs mb-md">
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Entrenamiento</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-on-surface-variant">Compromiso</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-md hover:opacity-90 transition-opacity active:scale-95 duration-150">Conocer a Pipo</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Form & Adoption Process -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center py-lg">
+<div class="bg-secondary-container/30 p-lg rounded-[32px] border border-secondary-container">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-md">¿Listos para el compromiso?</h3>
+<p class="font-body-md text-on-surface-variant mb-lg leading-relaxed">
+                    Adoptar es un acto de amor, pero también una responsabilidad para toda la vida. Nuestro proceso incluye una postulación inicial, una entrevista domiciliaria y un periodo de seguimiento.
+                </p>
+<div class="space-y-base mb-lg">
+<div class="flex items-start gap-md p-base bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="bg-primary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface">1. Formulario</h5>
+<p class="font-body-md text-on-surface-variant">Cuéntanos sobre tu hogar y estilo de vida.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-base bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="bg-tertiary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">home_health</span>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface">2. Visita Técnica</h5>
+<p class="font-body-md text-on-surface-variant">Verificamos que el entorno sea seguro.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-base bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<div>
+<h5 class="font-label-md text-on-surface">3. ¡Final Feliz!</h5>
+<p class="font-body-md text-on-surface-variant">Firma de contrato y entrega oficial.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-[32px] shadow-lg border-2 border-surface-container">
+<h4 class="font-headline-md text-headline-md mb-base">Postulación Express</h4>
+<form class="space-y-md">
+<div>
+<label class="font-label-md text-on-surface block mb-xs">Nombre Completo</label>
+<input class="w-full bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-3 focus:border-primary focus:ring-0 outline-none transition-colors" placeholder="Ej: Juan Pérez" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="font-label-md text-on-surface block mb-xs">WhatsApp</label>
+<input class="w-full bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-3 focus:border-primary focus:ring-0 outline-none transition-colors" placeholder="+57..." type="tel"/>
+</div>
+<div>
+<label class="font-label-md text-on-surface block mb-xs">Mascota de interés</label>
+<select class="w-full bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-3 focus:border-primary focus:ring-0 outline-none transition-colors">
+<option>Caramelo</option>
+<option>Lola</option>
+<option>Pipo</option>
+<option>Aún no lo sé</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-md text-on-surface block mb-xs">¿Por qué deseas adoptar?</label>
+<textarea class="w-full bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-3 focus:border-primary focus:ring-0 outline-none transition-colors" placeholder="Cuéntanos un poco..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-2xl font-label-md shadow-md hover:shadow-xl transition-shadow" type="submit">Enviar Solicitud de Adopción</button>
+<p class="text-center font-label-sm text-on-surface-variant">Al enviar, aceptas nuestros términos de cuidado animal.</p>
+</form>
+</div>
+</section>
+<!-- Finales Felices (Success Stories) -->
+<section class="py-xl">
+<h3 class="font-headline-lg text-headline-lg text-center mb-xl">Finales Felices 🧡</h3>
+<div class="flex flex-col md:flex-row gap-lg">
+<div class="flex-1 bg-tertiary-container/10 p-md rounded-3xl flex items-center gap-md relative overflow-hidden group">
+<img alt="Historia 1" class="w-24 h-24 rounded-2xl object-cover ring-4 ring-white" data-alt="A heartwarming close-up of a child hugging a rescued black dog in a garden. The child's face shows pure joy and the dog looks peaceful and content. Soft backlighting from the sun creates a dreamy, hazy atmosphere that emphasizes the warmth of the Caramelo brand. The scene uses soft greens and warm skin tones in a high-quality lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0Vfhf8nCQK0ys45YDb9qD7UtxFV6JtAtrx7J__ih3FJmbMDBAvUuGba6kbAN7YwBHy4vHZDNAIq4h0IhoF-8afIPAfNOJC_SCkNpqtrX0CjDufi7qdC-bBNgky-RYD5BRYplebCyxyhZJ15MqAXutiFF67VJbxzodgD-5O9cmfxLyQiBZgq1CstiDDs-h_LQdriwJCvWXny-xgWaEkONJs55fiZbcb9R_h8Ze0L-SFhQKsIClT-0kFTkQ5xfV6UVSvVFtFkyiLC0"/>
+<div>
+<p class="font-body-md italic text-on-surface mb-xs">"Desde que llegó Bruno, nuestras tardes son pura alegría. Fue la mejor decisión de nuestras vidas."</p>
+<p class="font-label-md text-tertiary">- Familia Mendoza, Adoptado hace 6 meses</p>
+</div>
+<span class="absolute top-2 right-2 material-symbols-outlined text-tertiary/20 text-4xl">format_quote</span>
+</div>
+<div class="flex-1 bg-primary-container/10 p-md rounded-3xl flex items-center gap-md relative overflow-hidden group">
+<img alt="Historia 2" class="w-24 h-24 rounded-2xl object-cover ring-4 ring-white" data-alt="A stylish young man walking a small, energetic dog in a sunny urban park with modern architecture in the background. The dog is wearing a colorful bandana. The lighting is bright and crisp, showcasing a modern, proactive lifestyle. The color palette features vibrant oranges and urban grays, reflecting a community of active and responsible pet owners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTecEuTlwpf7mbV0pSTs8Wy3nmpvXbVADABPVR1x9TZylHQq9WAAJxjD6A9ipCRXhtdtvVCCckKEznyhuHyd5GlfnqTgVez51QE9Z4qCclgLYQ0vzJuaFCCDQvEHAIVGcdmRBJgaFkzkKW6hgUODYjUVHTyfmhkcUe8sJhVx34xufiBsESWKtaS3GLh5CVSzWkKfTIux6DrdMTvzyVdOXieIdWkf4w4-U255n5ZK3XR5zdMipouvbnUHbkHXP259a3vY6siNx21mg"/>
+<div>
+<p class="font-body-md italic text-on-surface mb-xs">"Adoptar a Rayo cambió mi rutina. Ahora salgo más a caminar y conocí mucha gente en el parque."</p>
+<p class="font-label-md text-primary">- Daniel, Adoptado hace 2 meses</p>
+</div>
+<span class="absolute top-2 right-2 material-symbols-outlined text-primary/20 text-4xl">format_quote</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high w-full py-xl px-margin border-t-2 border-surface-variant dark:border-outline-variant mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-md">
+<div>
+<h2 class="font-headline-md text-primary font-bold">CARAMELO</h2>
+<p class="font-body-md text-on-surface-variant mt-xs">© 2024 CARAMELO Red de Cuidado Animal Popayán</p>
+</div>
+<nav class="flex flex-wrap gap-md">
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Ayuda</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Términos</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Privacidad</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Donar</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Contacto</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-xs bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0_-4px_20px_rgba(141,75,0,0.08)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-sm text-label-sm">Casos</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-2 scale-110 -translate-y-4 shadow-lg">
+<span class="material-symbols-outlined filled-icon" data-icon="add_circle">add_circle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm">Mapa</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-2 scale-90 duration-200 transition-transform">
+<span class="material-symbols-outlined filled-icon" data-icon="pets">pets</span>
+<span class="font-label-sm text-label-sm">Adoptar</span>
+</button>
+</nav>
+</body></html>

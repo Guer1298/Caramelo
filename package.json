@@ -1,0 +1,14 @@
+{
+  "name": "caramelo-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CARAMELO, plataforma comunitaria para reportar, atender y prevenir casos de perros en riesgo en Popayan.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "npm run check",
+    "check": "node --check server.js && node --check src/data.js && node --check src/app.js"
+  },
+  "dependencies": {}
+}

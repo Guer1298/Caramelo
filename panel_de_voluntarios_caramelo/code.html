@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "tertiary-container": "#00a572",
+                      "secondary-container": "#eae0b5",
+                      "on-tertiary-fixed": "#002113",
+                      "on-surface-variant": "#554336",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#b15f00",
+                      "tertiary-fixed": "#6ffbbe",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-background": "#121c28",
+                      "primary-fixed-dim": "#ffb77d",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#dbc2b0",
+                      "on-secondary-fixed": "#201c02",
+                      "secondary-fixed": "#ede3b8",
+                      "background": "#f8f9ff",
+                      "on-surface": "#121c28",
+                      "surface-container-low": "#eef4ff",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f8f9ff",
+                      "primary-fixed": "#ffdcc3",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#904d00",
+                      "tertiary": "#006c49",
+                      "surface-container-high": "#dfe9fa",
+                      "surface-variant": "#d9e3f4",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary": "#8d4b00",
+                      "inverse-primary": "#ffb77d",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed": "#2f1500",
+                      "on-secondary-container": "#6a6341",
+                      "secondary": "#665f3d",
+                      "surface-container-highest": "#d9e3f4",
+                      "secondary-fixed-dim": "#d1c79d",
+                      "inverse-surface": "#27313e",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#6e3900",
+                      "on-secondary-fixed-variant": "#4d4727",
+                      "outline": "#887364",
+                      "on-primary-container": "#fffbff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#00311f",
+                      "surface-dim": "#d1dbec"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "xl": "64px",
+                      "margin": "24px",
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "lg": "40px",
+                      "md": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 shadow-sm z-50">
+<div class="flex justify-between items-center px-margin py-base w-full max-w-7xl mx-auto">
+<h1 class="font-headline-xl text-headline-xl font-bold text-primary">CARAMELO</h1>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-gutter">
+<span class="text-primary font-bold cursor-pointer transition-colors hover:bg-surface-container-low px-sm py-xs rounded-lg">Inicio</span>
+<span class="text-on-surface-variant cursor-pointer transition-colors hover:bg-surface-container-low px-sm py-xs rounded-lg">Casos</span>
+<span class="text-on-surface-variant cursor-pointer transition-colors hover:bg-surface-container-low px-sm py-xs rounded-lg">Reportar</span>
+<span class="text-on-surface-variant cursor-pointer transition-colors hover:bg-surface-container-low px-sm py-xs rounded-lg">Mapa</span>
+<span class="text-on-surface-variant cursor-pointer transition-colors hover:bg-surface-container-low px-sm py-xs rounded-lg">Adoptar</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined p-base text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">search</button>
+<button class="material-symbols-outlined p-base text-primary hover:bg-surface-container-low rounded-full transition-colors" data-weight="fill">account_circle</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin py-lg space-y-xl">
+<!-- Welcome Hero Section (Asymmetric) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-md items-center">
+<div class="lg:col-span-7 space-y-md">
+<h2 class="font-headline-xl text-headline-xl text-primary leading-tight">Panel de Voluntarios</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Hola, Juan. Tu compromiso está cambiando vidas en Popayán. Explora las misiones activas y ayúdanos a proteger a quienes no tienen voz.</p>
+<div class="flex flex-wrap gap-sm">
+<div class="bg-secondary-container text-on-secondary-container px-md py-sm rounded-xl flex items-center gap-sm shadow-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">volunteer_activism</span>
+<span class="font-label-md text-label-md">Voluntario Activo</span>
+</div>
+<div class="bg-tertiary-container text-on-tertiary px-md py-sm rounded-xl flex items-center gap-sm shadow-sm">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-label-md text-label-md">Hogar Temporal Verificado</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 h-64 lg:h-80 rounded-3xl overflow-hidden shadow-lg relative">
+<img alt="Comunidad ayudando perros" class="w-full h-full object-cover" data-alt="A warm, sunny scene in a vibrant green park where a group of diverse, smiling volunteers are interacting with several happy dogs of different breeds. The lighting is soft and golden, highlighting the empathetic and communal atmosphere. The aesthetic is modern and approachable, with high-quality photography emphasizing trust and mutual aid in an animal rescue context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7HBF7i412QWAEKi4CAxTEq9svtQBJua5K-rmRyOwKQFYnEXQyQyzSPidX8GraNOvB2HT3fvJynDJ1WGfDKY3uNQsKlG5oD-JadFvG7ZOxx5wkAJKHodntvz68CaXhpROOCXKb4L5ADsNpP2iM-VlsY4BQ_whgmYxdIeA8bWzXaJZW5NMPtq7TVPixza9BRoxklRvIa-T90MKPv0NeWM6mDTGgR5KiVMUY8I59xmrAseg7jwCG9y1uQaBqsC3zuL3dU-nZF4zmitc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid: Misiones, Impacto, Disponibilidad -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Mi Impacto (Bento Small) -->
+<section class="md:col-span-4 bg-white rounded-3xl p-md shadow-[0_4px_20px_rgba(141,75,0,0.08)] space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Mi Impacto</h3>
+<span class="material-symbols-outlined text-tertiary text-headline-md">favorite</span>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-2xl text-center">
+<p class="font-headline-lg text-headline-lg text-primary">12</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Rescates</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-2xl text-center">
+<p class="font-headline-lg text-headline-lg text-primary">04</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Temporales</p>
+</div>
+</div>
+<div class="space-y-sm">
+<p class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant pb-xs">Últimas acciones</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img alt="Perro rescatado" class="w-full h-full object-cover" data-alt="A close-up portrait of a cute, healthy golden retriever mix smiling at the camera. The background is a soft-focus garden with warm sunlight filtering through leaves. The image conveys a sense of success and happiness following a rescue, styled with high-end photographic quality and natural, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6GwCociaoAOzwAfeXlQSs_EDxtxXEjiUOu4rutvSHwTSqr_BpMEDrluUiwYnlx1ES-Pr88SipFavXhGWXAcmEl2DEKHc9oAwl-7GQgNgQ-R91nhvEu0oJlrgFwo-BAan-ernCSH056uWPtQYek2eswm3MZhvIoTalfFGUUCYeUrrZ-dPaK_ztz671sk1m7luPsCm3M4pZR1EPbUNRv3J66jQtQL_0Yn5OdwK22IWnglWavqTlcEnZwTobwpZWZLk-uJZsC18DFE"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Transporte: Firulais</p>
+<p class="text-[10px] text-on-surface-variant">Finalizado hace 2 días</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Misiones Disponibles (Bento Large) -->
+<section class="md:col-span-8 bg-white rounded-3xl p-md shadow-[0_4px_20px_rgba(141,75,0,0.08)] space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Misiones Disponibles</h3>
+<div class="flex gap-xs">
+<button class="bg-surface-container-low p-xs rounded-lg material-symbols-outlined text-on-surface-variant">tune</button>
+</div>
+</div>
+<div class="space-y-gutter">
+<!-- Misión Card 1 -->
+<div class="group flex flex-col sm:flex-row gap-md p-gutter rounded-2xl border-2 border-surface-container-low hover:border-primary-container transition-all cursor-pointer">
+<div class="sm:w-32 sm:h-32 h-40 w-full rounded-xl overflow-hidden shrink-0">
+<img alt="Transporte urgente" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A small white dog sitting patiently in a clean, modern pet carrier inside a car. Soft morning light streams through the window. The style is soft-tactile and empathetic, focusing on the calm and safe feeling of animal transportation for a rescue mission." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0B5ARW2dK5OBYkcrIzEQgLB4RyXSjM0FXfWfbT2YTnrm6Y1jkR_3d-zWSwxdPX--kFmrWGbxyVaFHcgTumIKvBMN2pra9twuILcXPJ8awLgW78PxOlhd8M-wV8-nVncIxGkVhD0VzpfWMeAHbYP2vJOzvoif0TyNspnur0Op8oJzgcDuu_qFHx5N43A4z2Mss3Yangq7m7ztX1w5_luBgMfg3-Xw0kDHXIwf6e3lVzTMdoOXg8cwxHIpbGkcYEyUYfiVfOnIrw3A"/>
+</div>
+<div class="flex-1 space-y-xs">
+<div class="flex justify-between items-start">
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded-full font-label-sm text-[10px] uppercase tracking-wider">Transporte Urgente</span>
+<span class="text-on-surface-variant font-label-sm">A 2.5 km</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface">Llevar a 'Luna' a Veterinaria Central</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Se requiere traslado desde el barrio Pomona hasta el centro. Luna es dócil y pequeña.</p>
+<div class="pt-sm flex gap-sm">
+<button class="bg-primary text-on-primary px-md py-sm rounded-full font-label-md transition-all active:scale-95">Aceptar Misión</button>
+<button class="text-primary font-label-md hover:bg-surface-container-low px-md py-sm rounded-full transition-colors">Detalles</button>
+</div>
+</div>
+</div>
+<!-- Misión Card 2 -->
+<div class="group flex flex-col sm:flex-row gap-md p-gutter rounded-2xl border-2 border-surface-container-low hover:border-tertiary-container transition-all cursor-pointer">
+<div class="sm:w-32 sm:h-32 h-40 w-full rounded-xl overflow-hidden shrink-0 relative">
+<img alt="Hogar temporal" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A portrait of a gentle, older dog with graying muzzle resting its head on a soft, knitted blanket. The scene is lit by warm interior light, creating an atmosphere of safety, comfort, and longing for a home. The visual style is warm-centric and deeply communal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3HCtQGsbzIT8lr3ZMoYRv5fErN5jvWz19MBjrIr2wZz23RMPPGInBj_88-AcPWsG5wDkvxtJ9JlyFZmN-4ja9mkMK7mMp-pLMX2IGKborzsZP8r7K7Z6hI9S969hgcEXSqEWN9_0rqWRWBMXcxqeJhCqUmTs7E2d3Ch666sWFunkze9rY5XFkntg183ooUAjnEKocl3loiHh9uw9RR5P0HHN_3oXCDwBFDbGQaXU9cbNNeii25A7-2JxHeU0y1Mz3xSlI1n4d1U"/>
+</div>
+<div class="flex-1 space-y-xs">
+<div class="flex justify-between items-start">
+<span class="bg-tertiary-container text-on-tertiary px-sm py-xs rounded-full font-label-sm text-[10px] uppercase tracking-wider">Hogar Temporal</span>
+<span class="text-on-surface-variant font-label-sm">Pendiente</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface">Buscamos hogar para 'Bruno' (7 días)</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Bruno necesita un espacio tranquilo para recuperarse de su cirugía. Nosotros proveemos alimento y medicinas.</p>
+<div class="pt-sm flex gap-sm">
+<button class="bg-tertiary text-on-tertiary px-md py-sm rounded-full font-label-md transition-all active:scale-95">Postularme</button>
+<button class="text-tertiary font-label-md hover:bg-surface-container-low px-md py-sm rounded-full transition-colors">Ver requisitos</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Mi Disponibilidad & Mapa Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-md">
+<!-- Formulario Disponibilidad -->
+<div class="bg-surface-container-lowest rounded-3xl p-md border-2 border-surface-container-high space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary">Mi Disponibilidad</h3>
+<form class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Zonas de Ayuda</label>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full text-xs flex items-center gap-xs">
+                                Norte <button class="material-symbols-outlined text-xs">close</button>
+</span>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full text-xs flex items-center gap-xs">
+                                Centro <button class="material-symbols-outlined text-xs">close</button>
+</span>
+<button class="border-2 border-dashed border-outline-variant px-sm py-xs rounded-full text-xs text-on-surface-variant hover:border-primary hover:text-primary transition-colors"> + Agregar Zona</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Horario Preferido</label>
+<select class="w-full bg-surface border-2 border-surface-container-high rounded-xl py-sm px-md focus:border-primary focus:ring-0 text-on-surface transition-colors">
+<option>Mañanas (8:00 - 12:00)</option>
+<option>Tardes (14:00 - 18:00)</option>
+<option>Noches (19:00 - 22:00)</option>
+<option>Fines de semana</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Tipo de Ayuda</label>
+<div class="flex flex-col gap-xs">
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary-container" type="checkbox"/>
+<span class="text-sm">Transporte</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary-container" type="checkbox"/>
+<span class="text-sm">Hogar Temporal</span>
+</label>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-xl font-headline-md shadow-md hover:brightness-110 transition-all active:scale-95" type="submit">Actualizar mi Perfil</button>
+</form>
+</div>
+<!-- Mapa Visual -->
+<div class="rounded-3xl overflow-hidden shadow-lg border-2 border-white relative min-h-[300px]">
+<div class="absolute inset-0 bg-surface-container-high flex items-center justify-center">
+<!-- Placeholder for Map -->
+<img alt="Mapa de Popayán" class="w-full h-full object-cover opacity-60" data-location="Popayán, Colombia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc4jscNneXgAQNOzaS_GpzjzJvb-tjgfKnWh39ZTX6AyE_vWkBtF-y0R2gkK_y0wh3_-bigI0lbCepQ_HVPOOAgBC_Icz_897hPC9HF4nyuEcY-2yVqJd49HOLok2EBLJhrbc-VSZyGr26eU-6y1nCZPBjXz_9xwstYgrojKrG-cqYY9hsjT1FUD2mXZuPnlQlWJWNjtpi8lf29K2TkvqgwqgFahrfw4plE4Vj_cPspKNMslCePSmMKeU0-yb40iibM4pq2yrunOo"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-8 h-8 bg-primary rounded-full animate-ping opacity-75"></div>
+<span class="material-symbols-outlined text-primary text-4xl absolute" data-weight="fill">location_on</span>
+</div>
+<div class="absolute bottom-md right-md bg-white p-sm rounded-xl shadow-lg font-label-sm space-y-xs">
+<div class="flex items-center gap-sm"><span class="w-3 h-3 rounded-full bg-error"></span> 3 Casos Críticos</div>
+<div class="flex items-center gap-sm"><span class="w-3 h-3 rounded-full bg-primary"></span> 8 Transportes</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t-2 border-surface-variant w-full py-xl px-margin mt-lg">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-md">
+<div class="space-y-xs text-center md:text-left">
+<p class="font-headline-md text-primary font-bold">CARAMELO</p>
+<p class="font-body-md text-on-surface-variant">© 2024 CARAMELO Red de Cuidado Animal Popayán</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Ayuda</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Términos</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Privacidad</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Donar</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Contacto</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-xs bg-surface-container-lowest shadow-[0_-4px_20px_rgba(141,75,0,0.08)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-sm text-label-sm">Casos</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-2 scale-110 -translate-y-2">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-sm text-label-sm">Ayudar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-sm text-label-sm">Mapa</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</div>
+</nav>
+</body></html>

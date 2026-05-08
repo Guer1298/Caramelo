@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "tertiary-container": "#00a572",
+                    "secondary-container": "#eae0b5",
+                    "on-tertiary-fixed": "#002113",
+                    "on-surface-variant": "#554336",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#b15f00",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-background": "#121c28",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#dbc2b0",
+                    "on-secondary-fixed": "#201c02",
+                    "secondary-fixed": "#ede3b8",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c28",
+                    "surface-container-low": "#eef4ff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9ff",
+                    "primary-fixed": "#ffdcc3",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#904d00",
+                    "tertiary": "#006c49",
+                    "surface-container-high": "#dfe9fa",
+                    "surface-variant": "#d9e3f4",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary": "#8d4b00",
+                    "inverse-primary": "#ffb77d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed": "#2f1500",
+                    "on-secondary-container": "#6a6341",
+                    "secondary": "#665f3d",
+                    "surface-container-highest": "#d9e3f4",
+                    "secondary-fixed-dim": "#d1c79d",
+                    "inverse-surface": "#27313e",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-secondary-fixed-variant": "#4d4727",
+                    "outline": "#887364",
+                    "on-primary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#00311f",
+                    "surface-dim": "#d1dbec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "64px",
+                    "margin": "24px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(141, 75, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="bg-surface sticky top-0 z-[60] shadow-sm w-full">
+<div class="flex justify-between items-center px-margin py-base w-full max-w-7xl mx-auto">
+<div class="font-headline-xl text-headline-xl font-bold text-primary">CARAMELO</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-md">
+<a class="text-primary font-bold transition-colors" href="#">Inicio</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Casos</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Reportar</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Mapa</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg" href="#">Adoptar</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined p-2 text-primary hover:bg-surface-container-low rounded-full transition-colors">account_circle</button>
+</div>
+</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[819px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-margin grid md:grid-cols-2 gap-lg items-center relative z-10">
+<div class="space-y-md">
+<span class="bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider">Popayán Compasiva</span>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">
+                        Una ciudad inteligente es la que detecta el sufrimiento antes de que alguien desaparezca silenciosamente.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Únete a la red de cuidado animal más grande de la ciudad. Juntos transformamos el reporte en rescate y el abandono en hogar.
+                    </p>
+<div class="flex flex-wrap gap-md pt-base">
+<button class="bg-primary text-on-primary px-lg py-md rounded-xl font-bold flex items-center gap-sm shadow-lg hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-weight="fill">add_circle</span>
+                            Reportar perro en riesgo
+                        </button>
+<button class="bg-secondary-container text-on-secondary-container px-lg py-md rounded-xl font-bold flex items-center gap-sm hover:bg-secondary-fixed transition-colors">
+                            Ver casos activos
+                        </button>
+</div>
+</div>
+<div class="relative h-[500px] hidden md:block">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl opacity-30 -z-10 translate-x-20"></div>
+<img alt="Perro rescatado en Popayán" class="w-full h-full object-cover rounded-[40px] shadow-2xl border-8 border-white" data-alt="A heartwarming, high-quality photograph of a happy golden retriever mix sitting on a sunny colonial street in Popayán. The dog has soft, expressive eyes and a gentle demeanor. The background features the iconic white architecture of the White City under a clear blue sky with warm, golden hour lighting. The image evokes feelings of hope, safety, and community care with a soft, tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHBnfARPlACYqg72Vt7fO-IUsGrQbuBN0fbzTlbu8rQxPIep0iyY70EbUFXUmjHEDs21qzfKh5Uui5HvVueLiGEmDdLpHwGFEjeParJQfTtnB6OCvN-wY4nwi_sw47cOPRISyMQXUrwaQ3-nid8zjQbo8lECUe6YPomF4xa6BMdnPyEb1s7kvsAfQkG74hSSegwwIx7df0SJeFnyhfXo9fnE3Jwe53oTd-sS66-4_AbjPmJN0u5l4QtWBGkvZ1zjwZqPu7qDiaGTM"/>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="py-xl max-w-7xl mx-auto px-margin">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="md:col-span-2 bg-surface-container-lowest p-lg rounded-[32px] soft-shadow flex flex-col justify-between border border-surface-variant/50">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-base">pets</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Vidas Impactadas</h3>
+</div>
+<div class="mt-lg">
+<span class="text-6xl font-extrabold text-primary">1,240+</span>
+<p class="text-on-surface-variant font-label-md">Perros atendidos y reubicados en el último año</p>
+</div>
+</div>
+<div class="bg-tertiary-container text-on-tertiary p-lg rounded-[32px] soft-shadow flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl">volunteer_activism</span>
+<div>
+<span class="text-4xl font-bold">450+</span>
+<p class="font-label-md opacity-90">Voluntarios activos en la red</p>
+</div>
+</div>
+<div class="bg-secondary-container p-lg rounded-[32px] soft-shadow flex flex-col justify-between border border-primary/10">
+<span class="material-symbols-outlined text-primary text-4xl">favorite</span>
+<div>
+<span class="text-4xl font-bold text-primary">85%</span>
+<p class="text-on-secondary-container font-label-md">Tasa de éxito en reencuentros</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Casos Cercanos Asymmetric Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Casos urgentes cerca de ti</h2>
+<p class="text-on-surface-variant mt-xs">Tu reporte o ayuda puede cambiar un destino hoy.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-xs hover:underline" href="#">
+                        Ver todos los casos <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Case Card 1 -->
+<div class="bg-white rounded-[24px] overflow-hidden soft-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64">
+<img alt="Perro extraviado" class="w-full h-full object-cover" data-alt="A sharp, clear photograph of a small brown and white terrier dog looking curious. The dog is positioned in the center against a softly blurred urban park background with warm lighting. A red status badge is digitally overlaid in the top right saying 'Urgente'. The style is clean, modern, and empathetic, focusing on the dog's endearing features to encourage community help." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE3Jm3uxbUzPqIO2QaIbtuDtlYJ8AxIlIXwTfu81uUycyUTQtetQ-VRUJhJ_xSMf3nCzkDO_3dwHO0Nj5mC6cflTiNNyueR3LujI2OtgrO26Nt-8ABp5YR_CRnEFH101pQy5wmNzxRsukf36yIONoy3f_DaklMsWzzZWpAcp_nkFsUqsnvV58rDgwPIYWiLfzAsJtspZbd7_CXb_nCOp_umiYKcdPZOszoecovPeO_anraNFUuVAx1n7NNsE2otJLkG2NBfCPC2rE"/>
+<span class="absolute top-4 right-4 bg-error text-white px-3 py-1 rounded-full text-label-sm font-bold shadow-md">URGENTE</span>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-xs text-on-surface-variant text-label-sm mb-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Barrio Caldas, Popayán
+                            </div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Caramelo (Criollo)</h4>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-xs">Visto por última vez cerca al parque. Es muy asustadizo, por favor reportar si lo ven.</p>
+<div class="mt-md pt-md border-t border-surface-variant flex justify-between items-center">
+<span class="text-label-sm text-outline">Hace 2 horas</span>
+<button class="text-primary font-bold text-label-md">Ver detalles</button>
+</div>
+</div>
+</div>
+<!-- Case Card 2 -->
+<div class="bg-white rounded-[24px] overflow-hidden soft-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64">
+<img alt="Perro en adopción" class="w-full h-full object-cover" data-alt="A professional portrait of a medium-sized black Labrador mix with a shiny coat and a happy tongue-out expression. The dog is wearing a green 'Adopt Me' bandana. The lighting is soft and flattering, set against a warm beige studio background. The visual style is modern corporate combined with organic softness, emphasizing the dog's readiness for a new home." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPGIxCXKRSU-xntGcul8EKiwkVKCHehFzISjki6F7cGcw2xk02ed24Sqk0hAiKAVYfXm8YtwsGcTp9092rifZIml7Z9arIXohooVOI3WFwXfvJ53M-E4xHuNL4cdjvhrmFodlu_hYdhEyXcxh8gzo4lLGwnrGe1RwUNU79L2ZbqxGKW0mu6nlcOx2C0muPSNAC5GqFqXkyO4YFARPnGdGeIy5bCukDul1BSKfw0Gygez6P3HMSYuRdRegPHKxyuW19f8PMVZk40w"/>
+<span class="absolute top-4 right-4 bg-tertiary text-white px-3 py-1 rounded-full text-label-sm font-bold shadow-md">ADOPCIÓN</span>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-xs text-on-surface-variant text-label-sm mb-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Hogar de Paso "Esperanza"
+                            </div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Luna (Labrador)</h4>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-xs">Luna busca un hogar para siempre. Es juguetona, está vacunada y ama a los niños.</p>
+<div class="mt-md pt-md border-t border-surface-variant flex justify-between items-center">
+<span class="text-label-sm text-outline">3 años • Hembra</span>
+<button class="text-primary font-bold text-label-md">Adoptar</button>
+</div>
+</div>
+</div>
+<!-- Case Card 3 -->
+<div class="bg-white rounded-[24px] overflow-hidden soft-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="relative h-64">
+<img alt="Perro rescatado" class="w-full h-full object-cover" data-alt="A high-resolution photo of a senior dog resting comfortably on a soft blanket inside a brightly lit clinic. A veterinary professional's hand is seen gently petting the dog's head, conveying a sense of care and relief. The color palette features soft creams and warm oranges, creating a reassuring and communal atmosphere. The mood is one of immediate relief and trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkusOxRnRswKzUBoq_R5CZjigVsPZO9c8eA7ZrhMBtm8dtoge9ebSwRudm-6e8oIotJJLqN7h7fLk8CCBa4kyUKCg0sTGOlmNyEgDaLsBGYFx5IAEiR93DPgou6oricX7aSbN1qLUaf-OU9N7RwEcJjNLtQvnkhrZVmiY7pHI-2mTbCk4rOFFobV9YdovrAp7txMRyT5WITmbb3t3RcMYGgmRBLq5jxJHo7ygvRe9UzaZ-9YY8IlAqLMqWy_ggxkkTNXtBBhHyjok"/>
+<span class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-label-sm font-bold shadow-md">AVISTADO</span>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-xs text-on-surface-variant text-label-sm mb-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Sector Terminal
+                            </div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Viejito (Sin nombre)</h4>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-xs">Encontrado desorientado cerca a la salida de buses. Buscamos a sus dueños con urgencia.</p>
+<div class="mt-md pt-md border-t border-surface-variant flex justify-between items-center">
+<span class="text-label-sm text-outline">En resguardo temporal</span>
+<button class="text-primary font-bold text-label-md">Ayudar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-margin grid md:grid-cols-2 gap-lg items-center">
+<div class="space-y-md">
+<h2 class="font-headline-lg text-headline-lg">Tú puedes ser la diferencia entre el miedo y el hogar</h2>
+<p class="font-body-lg opacity-90">Apoya nuestra labor a través de donaciones o convirtiéndote en voluntario de transporte y rescate.</p>
+<div class="flex gap-md pt-sm">
+<button class="bg-white text-primary px-lg py-md rounded-xl font-bold hover:bg-surface-container-low transition-colors shadow-lg">Quiero Donar</button>
+<button class="border-2 border-white text-white px-lg py-md rounded-xl font-bold hover:bg-white/10 transition-colors">Ser Voluntario</button>
+</div>
+</div>
+<div class="relative h-80 rounded-[32px] overflow-hidden shadow-2xl">
+<img alt="Comunidad ayudando" class="w-full h-full object-cover" data-alt="A warm and vibrant photograph showing a diverse group of young volunteers in Popayán wearing 'Caramelo' branded orange t-shirts. They are smiling and interacting with several dogs in a beautiful public plaza. The scene is bathed in bright, natural sunlight, creating a high-key, modern aesthetic. The emotional response is one of trust and deep communal spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDSUavZY7WDLV2opAxLp4ieGksRvMmz4GumBTD_UYH5NVIOuUgNhAo6mOzgjTZMOtq5TL2BB1JTUS0dMhGDNM-A2q8R21TpBCkfzZ-cx6KJU1LWbzFn8i8u-L7TDuApWLr6JFXc8B_OcQzvy6A9plKFyWMKc-0-GdfZXm2nG8VdTve6jPwVTjrV-6a6806PRyv6bTPd5PazTbYmBivNoezbNOF2kXzSssDFeM2FQvIa_Wv-w71V5heisDA7RegDqIWU-ZaC5Q5q6o"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin bg-surface-container-low border-t-2 border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="font-headline-md text-primary font-bold">CARAMELO</div>
+<p class="text-on-surface-variant text-label-sm">© 2024 CARAMELO Red de Cuidado Animal Popayán</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Ayuda</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Términos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Privacidad</a>
+<a class="text-primary underline font-bold" href="#">Donar</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Contacto</a>
+</div>
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-primary">share</button>
+<button class="material-symbols-outlined text-primary">mail</button>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-xs bg-surface-container-lowest shadow-[0_-4px_20px_rgba(141,75,0,0.08)]">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-label-sm text-label-sm">Casos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary text-4xl">add_circle</span>
+<span class="font-label-sm text-label-sm">Reportar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-sm text-label-sm">Mapa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-label-sm text-label-sm">Adoptar</span>
+</a>
+</nav>
+</body></html>
