@@ -123,6 +123,32 @@ npm run build
 npm run check
 ```
 
+## Configuracion para Vercel
+
+El proyecto quedo listo para Vercel como aplicacion estatica:
+
+- `vercel.json` define `buildCommand: npm run build`.
+- `vercel.json` define `outputDirectory: dist`.
+- `scripts/build.mjs` genera la salida de produccion.
+- `.vercelignore` evita subir prototipos originales de Stitch al deploy.
+- Las rutas limpias como `/casos/case-canelo` y `/dashboard` hacen fallback a `index.html`.
+
+Deploy recomendado:
+
+```bash
+npm install
+npm run build
+npx vercel
+```
+
+Deploy a produccion:
+
+```bash
+npx vercel --prod
+```
+
+No hay variables de entorno requeridas para el MVP actual.
+
 ## Verificacion realizada
 
 - `npm install`: correcto.
@@ -130,6 +156,7 @@ npm run check
 - `npm run build`: correcto.
 - `npm run dev`: correcto con permiso para servidor local.
 - HTTP `200 OK` para `/`, `/src/app.js`, `/src/styles.css` y fallback de ruta.
+- Vista previa desde `dist`: correcta.
 
 Nota: `agent-browser` no esta instalado en este entorno, por lo que no pude hacer verificacion automatizada de consola del navegador.
 

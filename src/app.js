@@ -80,7 +80,16 @@ function slug(value = "") {
 
 function getHashPath() {
   const hash = window.location.hash || "#/";
-  return hash === "#" ? "#/" : hash;
+  if (hash && hash !== "#/" && hash !== "#") {
+    return hash;
+  }
+
+  const pathname = window.location.pathname.replace(/\/+$/, "");
+  if (pathname && pathname !== "") {
+    return `#${pathname}`;
+  }
+
+  return "#/";
 }
 
 function isActive(path, routePath) {
@@ -1443,8 +1452,4 @@ window.addEventListener("hashchange", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-if (!window.location.hash) {
-  window.location.hash = "#/";
-} else {
-  render();
-}
+render();

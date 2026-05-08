@@ -1,0 +1,24 @@
+node_modules
+.git
+.vercel
+dist
+*.log
+.DS_Store
+.env
+.env.*
+
+# Prototipos originales de Stitch conservados en Git, no necesarios en el deploy.
+adopciones_caramelo
+caramelo_animal_rescue_network
+caramelo_design_system
+casos_activos_caramelo
+donaciones_caramelo
+educaci_n_y_gu_as_caramelo
+inicio_caramelo
+mapa_de_la_red_caramelo
+panel_de_gesti_n_caramelo
+panel_de_voluntarios_caramelo
+perfil_de_perro_caramelo
+reportar_perro_en_riesgo_caramelo
+arquitectura_t_cnica_caramelo.md
+estrategia_de_producto_caramelo.md

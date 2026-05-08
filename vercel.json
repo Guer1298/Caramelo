@@ -1,0 +1,90 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/src/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/reportar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/casos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/casos/:id",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/perros/:id",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/mapa",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/adoptar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/donar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/campanas",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/educacion",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/refugio",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/veterinario",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/voluntariado",
+      "destination": "/index.html"
+    }
+  ]
+}

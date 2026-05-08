@@ -4,10 +4,14 @@
   "private": true,
   "description": "CARAMELO, plataforma comunitaria para reportar, atender y prevenir casos de perros en riesgo en Popayan.",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "npm run check",
+    "preview": "node server.js dist",
+    "build": "npm run check && node scripts/build.mjs",
     "check": "node --check server.js && node --check src/data.js && node --check src/app.js"
   },
   "dependencies": {}
